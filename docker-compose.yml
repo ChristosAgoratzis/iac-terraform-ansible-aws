@@ -1,0 +1,24 @@
+services:
+  frontend:
+    image: christaras100/react_app:latest
+    container_name: react_app
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - full-stack-app-network
+
+  backend:
+    image: christaras100/spring_app:latest
+    container_name: spring_app
+    environment:
+      - SPRING_DATASOURCE_URL=${DB_URL}
+      - SPRING_DATASOURCE_USERNAME=${DB_USER}
+      - SPRING_DATASOURCE_PASSWORD=${DB_PASS}
+    networks:
+      - full-stack-app-network
+
+networks:
+  full-stack-app-network:
+
