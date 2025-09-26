@@ -1,7 +1,7 @@
 # Local .terraform directories
 .terraform/
 terraform-key.pem
-
+hosts.ini
 # .tfstate files
 *.tfstate
 *.tfstate.*
